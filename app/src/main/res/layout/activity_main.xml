@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/Title"
+        android:textAlignment="center"
+        android:textColor="@color/title_color"
+        android:textSize="@dimen/titile_size"/>
+
+    <TextView
+        android:id="@+id/display_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_margin="@dimen/margin_bw_text"
+        android:text="@string/items_are"
+        android:textSize="@dimen/textview_size"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:onClick="addItem"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_add"/>
+</RelativeLayout>

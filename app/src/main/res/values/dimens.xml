@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titile_size">25sp</dimen>
+    <dimen name="textview_size">20sp</dimen>
+    <dimen name="margin_bw_text">12dp</dimen>
+    <dimen name="margin2">60dp</dimen>
+    <dimen name="margin3">21dp</dimen>
+    <dimen name="padding_start">16dp</dimen>
+</resources>

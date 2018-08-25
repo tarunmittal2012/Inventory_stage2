@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Inventory</string>
+    <string name="Title">Welcome to Inventory Store</string>
+    <string name="add_product">ADD PRODUCT</string>
+    <string name="product_name">Product Name :</string>
+    <string name="enter_product_name">Enter Product Name</string>
+    <string name="product_price">Product Price :</string>
+    <string name="enter_product_price">    Enter Product Price</string>
+    <string name="product_quantity">Product Quantity</string>
+    <string name="enter_product_quantity">Enter Product Quantity</string>
+    <string name="product_supplier">Product Supplier</string>
+    <string name="supplier_phone">Supplier Phone \n Number</string>
+    <string name="enter_phone_number">Enter Mobile Number</string>
+    <string name="amazon">Amazon</string>
+    <string name="flipkart">Flipart</string>
+    <string name="ebay">EBay</string>
+    <string name="menu_title">add_item</string>
+    <string name="Home">home</string>
+    <string name="items_are">Items Are</string>
+</resources>
