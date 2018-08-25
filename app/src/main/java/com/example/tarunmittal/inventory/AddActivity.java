@@ -21,6 +21,7 @@ import com.example.tarunmittal.inventory.Data.InventoryContract;
 import com.example.tarunmittal.inventory.Data.InventoryDbHelper;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 public class AddActivity extends AppCompatActivity {
 
     private static final String TAG = AddActivity.class.getName();
@@ -41,11 +42,13 @@ public class AddActivity extends AppCompatActivity {
 
     private int mSupplieName = InventoryContract.InventoryEntry.SUPPLIER_UNKNOWN;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
+        ButterKnife.bind(this);
         mSpinner = findViewById(R.id.product_supplier_spinner);
         setUpSpinner();
     }
@@ -82,33 +85,12 @@ public class AddActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.addproduct,null);
-          return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case R.id.add_item:
-                insertItem();
-                finish();
-
-            case R.id.home:
-                NavUtils.navigateUpFromSameTask(this);
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     private void insertItem() {
 
         String productNameText = productName.getText().toString().trim();
         String quantityText = productQuantityText.getText().toString().trim();
         int quantity = Integer.parseInt(quantityText);
+        Log.e(TAG, quantityText);
         String priceText = productPriceText.getText().toString().trim();
         int productPrice = Integer.parseInt(priceText);
         String supplierProductText = supplierPhoneNumberText.getText().toString().trim();
@@ -133,5 +115,28 @@ public class AddActivity extends AppCompatActivity {
             Log.d("successfully message", "insert row on table");
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.addproduct, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.add_product:
+                insertItem();
+                finish();
+
+            case R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 }
