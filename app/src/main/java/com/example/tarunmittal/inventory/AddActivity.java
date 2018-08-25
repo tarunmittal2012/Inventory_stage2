@@ -89,33 +89,42 @@ public class AddActivity extends AppCompatActivity {
 
         String productNameText = productName.getText().toString().trim();
         String quantityText = productQuantityText.getText().toString().trim();
-        int quantity = Integer.parseInt(quantityText);
-        Log.e(TAG, quantityText);
         String priceText = productPriceText.getText().toString().trim();
-        int productPrice = Integer.parseInt(priceText);
         String supplierProductText = supplierPhoneNumberText.getText().toString().trim();
-        int mobile = Integer.parseInt(supplierProductText);
         InventoryDbHelper dbHelper = new InventoryDbHelper(this);
         SQLiteDatabase database = dbHelper.getWritableDatabase();
 
-        ContentValues values = new ContentValues();
-        values.put(InventoryContract.InventoryEntry.COLUMN_PRODUCT_NAME, productNameText);
-        values.put(InventoryContract.InventoryEntry.COLUMN_PRODUCT_PRICE, productPrice);
-        values.put(InventoryContract.InventoryEntry.COLUMN_PRODUCT_QUANTITY, quantity);
-        values.put(InventoryContract.InventoryEntry.COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER, mobile);
-        values.put(InventoryContract.InventoryEntry.COLUMN_PRODUCT_SUPPLIER_NAME, mSupplieName);
-        long newRowId = database.insert(InventoryContract.InventoryEntry.TABLE_NAME, null, values);
-
-        if (newRowId == -1) {
-            Toast.makeText(this, "Error with saving product", Toast.LENGTH_SHORT).show();
-            Log.d("Error message", "Doesn't insert row on table");
-
+        if (TextUtils.isEmpty(productNameText)) {
+            productName.requestFocus();
+            productName.setError("Required!");
+        } else if (TextUtils.isEmpty(quantityText)) {
+            productQuantityText.requestFocus();
+            productQuantityText.setError("Required!");
+        } else if (TextUtils.isEmpty(priceText)) {
+            productPriceText.requestFocus();
+            productPriceText.setError("Required!");
+        } else if (TextUtils.isEmpty(supplierProductText)) {
+            supplierPhoneNumberText.requestFocus();
+            supplierPhoneNumberText.setError("Required!");
         } else {
-            Toast.makeText(this, "Product saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();
-            Log.d("successfully message", "insert row on table");
+            ContentValues values = new ContentValues();
+            values.put(InventoryContract.InventoryEntry.COLUMN_PRODUCT_NAME, productNameText);
+            values.put(InventoryContract.InventoryEntry.COLUMN_PRODUCT_PRICE, priceText);
+            values.put(InventoryContract.InventoryEntry.COLUMN_PRODUCT_QUANTITY, quantityText);
+            values.put(InventoryContract.InventoryEntry.COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER, supplierProductText);
+            values.put(InventoryContract.InventoryEntry.COLUMN_PRODUCT_SUPPLIER_NAME, mSupplieName);
+            long newRowId = database.insert(InventoryContract.InventoryEntry.TABLE_NAME, null, values);
+
+            if (newRowId == -1) {
+                Toast.makeText(this, "Error with saving product", Toast.LENGTH_SHORT).show();
+                Log.d("Error message", "Doesn't insert row on table");
+
+            } else {
+                Toast.makeText(this, "Product saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();
+                Log.d("successfully message", "insert row on table");
+            }
         }
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 

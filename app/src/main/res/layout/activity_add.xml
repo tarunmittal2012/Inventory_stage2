@@ -74,7 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/enter_product_price"
-                android:inputType="number"
+                android:inputType="text"
                 android:textSize="@dimen/textview_size"/>
 
             <TextView
@@ -114,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_bw_text"
                 android:hint="@string/enter_product_quantity"
-                android:inputType="number"
+                android:inputType="text"
                 android:textSize="@dimen/textview_size"/>
         </RelativeLayout>
     </LinearLayout>
@@ -176,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_bw_text"
                 android:hint="@string/enter_phone_number"
-                android:inputType="phone"
+                android:inputType="text"
                 android:textSize="@dimen/textview_size"/>
         </RelativeLayout>
     </LinearLayout>

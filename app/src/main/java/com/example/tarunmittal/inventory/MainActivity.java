@@ -19,25 +19,30 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.add_item)
     FloatingActionButton mFloatingActionButton;
 
+    TextView displayItem;
 
     private InventoryDbHelper helper;
-TextView displayItem;
 
     @OnClick(R.id.add_item)
-    public void addItem(View view){
+    public void addItem(View view) {
+
         Intent intent = new Intent(MainActivity.this, AddActivity.class);
         startActivity(intent);
 
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        displayItem=findViewById(R.id.display_product);
+        displayItem = findViewById(R.id.display_product);
+
+        displayItem.setTextColor(getResources().getColor(R.color.colorAccent));
         helper = new InventoryDbHelper(this);
 
     }
+
     @Override
     protected void onStart() {
 
@@ -65,13 +70,13 @@ TextView displayItem;
                 null
         );
         try {
-           displayItem.setText("Inventory Contains : " + cursor.getCount());
+            displayItem.setText("Inventory Contains : " + cursor.getCount() + "\n");
             displayItem.append(
                     InventoryContract.InventoryEntry._ID + " | " +
-                            InventoryContract.InventoryEntry.COLUMN_PRODUCT_NAME + " |-| " +
-                            InventoryContract.InventoryEntry.COLUMN_PRODUCT_PRICE + " |-| " +
-                            InventoryContract.InventoryEntry.COLUMN_PRODUCT_QUANTITY + " |-| " +
-                            InventoryContract.InventoryEntry.COLUMN_PRODUCT_SUPPLIER_NAME + " |-| " +
+                            InventoryContract.InventoryEntry.COLUMN_PRODUCT_NAME + " | " +
+                            InventoryContract.InventoryEntry.COLUMN_PRODUCT_PRICE + " | " +
+                            InventoryContract.InventoryEntry.COLUMN_PRODUCT_QUANTITY + " | " +
+                            InventoryContract.InventoryEntry.COLUMN_PRODUCT_SUPPLIER_NAME + " | " +
                             InventoryContract.InventoryEntry.COLUMN_PRODUCT_SUPPLIER_PHONE_NUMBER + "\n");
 
             int idColumnIndex = cursor.getColumnIndex(InventoryContract.InventoryEntry._ID);
@@ -83,16 +88,16 @@ TextView displayItem;
             while (cursor.moveToNext()) {
                 int currentID = cursor.getInt(idColumnIndex);
                 String currentName = cursor.getString(nameColumnIndex);
-                int currentPrice = cursor.getInt(priceColumnIndex);
-                int currentQuantity = cursor.getInt(quantityColumnIndex);
-                int currentSupplierName = cursor.getInt(supplierNameColumnIndex);
-                int currentSupplierPhone = cursor.getInt(supplierPhoneColumnIndex);
+                String currentPrice = cursor.getString(priceColumnIndex);
+                String currentQuantity = cursor.getString(quantityColumnIndex);
+                String currentSupplierName = cursor.getString(supplierNameColumnIndex);
+                String currentSupplierPhone = cursor.getString(supplierPhoneColumnIndex);
 
                 displayItem.append(("\n" + currentID + " - " +
-                        currentName + " - " +
-                        currentPrice + " - " +
-                        currentQuantity + " - " +
-                        currentSupplierName + " - " +
+                        currentName + " !- " +
+                        currentPrice + " !- " +
+                        currentQuantity + " !- " +
+                        currentSupplierName + "!- " +
                         currentSupplierPhone));
             }
         } finally {

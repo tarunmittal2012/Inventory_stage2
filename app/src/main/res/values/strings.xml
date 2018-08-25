@@ -18,4 +18,6 @@
     <string name="Home">home</string>
     <string name="items_are">Items Are</string>
     <string name="rs">Rs.</string>
+    <string name="update">Update Product</string>
+    <string name="delete">Delete Product</string>
 </resources>
