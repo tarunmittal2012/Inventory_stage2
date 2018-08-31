@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".ViewActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/TextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/view_item"
+            android:textSize="@dimen/titile_size"/>
+
+
+        <TextView
+            android:id="@+id/product_view"
+            style="@style/TextView"
+            android:layout_below="@id/title"
+            android:layout_marginTop="@dimen/bottom_margin"
+            android:text="@string/product_name"
+            android:textSize="@dimen/textview_size"/>
+
+        <TextView
+            android:id="@+id/product_name_view_text"
+            style="@style/TextView"
+            android:layout_alignEnd="@+id/title"
+            android:layout_alignTop="@+id/product_view"
+            android:text="Shirt"/>
+
+        <TextView
+            android:id="@+id/product_price_view"
+            style="@style/TextView"
+            android:layout_below="@id/product_view"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/product_price"
+            android:textSize="@dimen/textview_size"/>
+
+        <TextView
+            android:id="@+id/product_price_view_text"
+            style="@style/TextView"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/title"
+            android:layout_alignTop="@+id/product_price_view"
+            android:text="10"/>
+
+        <TextView
+            android:id="@+id/product_quantity_view"
+            style="@style/TextView"
+            android:layout_below="@id/product_price_view_text"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/product_quantity"
+            android:textSize="@dimen/textview_size"/>
+
+        <TextView
+            android:id="@+id/product_price_quantity_text"
+            style="@style/TextView"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/title"
+            android:layout_alignTop="@+id/product_quantity_view"
+            android:text="ded"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/increase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/product_price_view_text"
+            android:layout_marginEnd="@dimen/margin2"
+            android:layout_marginTop="@dimen/margin"
+            android:src="@drawable/ic_add_black_24dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/decrease"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/product_price_view_text"
+            android:layout_marginTop="@dimen/margin"
+            android:src="@drawable/ic_remove_black_24dp"/>
+
+        <TextView
+            android:id="@+id/product_supplier_name_textview"
+            style="@style/TextView"
+            android:layout_below="@id/product_quantity_view"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/product_supplier"
+            android:textSize="@dimen/textview_size"/>
+
+        <TextView
+            android:id="@+id/product_supplier_name_view_text"
+            style="@style/TextView"
+            android:layout_alignEnd="@+id/title"
+            android:layout_alignTop="@+id/product_supplier_name_textview"
+            android:text="@string/amazon"/>
+
+        <TextView
+            android:id="@+id/product_phone_textview"
+            style="@style/TextView"
+            android:layout_below="@id/product_supplier_name_textview"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/supplier_phone"
+            android:textSize="@dimen/textview_size"/>
+
+        <TextView
+            android:id="@+id/product_phone_view_text"
+            style="@style/TextView"
+            android:layout_alignEnd="@+id/title"
+            android:layout_below="@id/product_supplier_name_textview"
+            android:layout_marginTop="@dimen/margin"
+            android:text="95577"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/product_supplier_name_textview"
+            android:layout_marginTop="@dimen/margin"
+            android:src="@drawable/ic_call_black_24dp"/>
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_phone_textview"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@android:color/holo_red_dark"
+            android:drawableStart="@drawable/ic_delete"
+            android:text="@string/delete"
+            android:textColor="@android:color/white"/>
+    </RelativeLayout>
+
+</RelativeLayout>

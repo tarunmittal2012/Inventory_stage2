@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/product_name_textview"
+            style="@style/TextView"
+            android:text="@string/product_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textview_size"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/product_quantity_textview"
+            style="@style/TextView"
+            android:layout_alignBottom="@+id/product_name_textview"
+            android:layout_alignParentEnd="true"
+            android:text="@string/product_quantity"/>
+
+        <Button
+            android:id="@+id/sale_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/product_quantity_textview"
+            android:layout_marginEnd="108dp"
+            android:background="@color/sale"
+            android:src="@drawable/ic_add_black_24dp"
+            android:text="@string/sale"
+            android:textColor="@color/text"/>
+
+        <Button
+            android:id="@+id/edit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/product_name_textview"
+            android:background="@color/sale"
+            android:src="@drawable/ic_remove_black_24dp"
+            android:text="@string/Edit"
+            android:textColor="@color/text"/>
+
+        <TextView
+            android:id="@+id/product_price_textview"
+            style="@style/TextView"
+            android:layout_below="@id/product_quantity_textview"
+            android:text="@string/product_price"/>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
