@@ -13,4 +13,9 @@
     <dimen name="cardview_horizontal_padding">6dp</dimen>
     <dimen name="cardview_vertical_padding">2dp</dimen>
     <dimen name="bottom_margin">30dp</dimen>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="startmargin">4dp</dimen>
+    <dimen name="marginend">86dp</dimen>
+    <dimen name="top">116dp</dimen>
 </resources>

@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/empty_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:text="@string/empty_view_text"
+        android:textAppearance="?android:textAppearanceMedium"/>
 
     <TextView
         android:id="@+id/title"
@@ -16,14 +27,13 @@
         android:textColor="@color/title_color"
         android:textSize="@dimen/titile_size"/>
 
-    <TextView
-        android:id="@+id/display_product"
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/item_list"
         android:layout_below="@id/title"
-        android:layout_margin="@dimen/margin_bw_text"
-        android:text="@string/items_are"
-        android:textSize="@dimen/textview_size"/>
+        android:layout_height="match_parent">
+
+    </ListView>
 
 
     <android.support.design.widget.FloatingActionButton
