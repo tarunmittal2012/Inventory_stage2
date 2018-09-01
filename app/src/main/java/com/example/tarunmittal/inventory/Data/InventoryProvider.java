@@ -133,7 +133,7 @@ public class InventoryProvider extends ContentProvider {
 
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
         int deletedRows;
-
+//match Uri
         final int match = sUriMatcher.match(uri);
         switch (match) {
             case PROUDCTS:
