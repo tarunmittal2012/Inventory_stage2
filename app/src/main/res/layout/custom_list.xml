@@ -30,6 +30,7 @@
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/product_quantity_textview"
             android:layout_marginEnd="108dp"
+            android:focusable="false"
             android:background="@color/sale"
             android:src="@drawable/ic_add_black_24dp"
             android:text="@string/sale"
@@ -44,6 +45,7 @@
             android:background="@color/sale"
             android:src="@drawable/ic_remove_black_24dp"
             android:text="@string/Edit"
+            android:focusable="false"
             android:textColor="@color/text"/>
 
         <TextView

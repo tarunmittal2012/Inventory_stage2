@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @BindView(R.id.add_item)
     FloatingActionButton mFloatingActionButton;
 
+    @BindView(R.id.list)
+    ListView inventoryList;
+
     InventoryAdapter adapter;
 
     private InventoryDbHelper helper;
@@ -55,8 +58,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
-        ListView inventoryList = findViewById(R.id.item_list);
+        helper = new InventoryDbHelper(this);
         TextView emptyView = findViewById(R.id.empty_text_view);
         inventoryList.setEmptyView(emptyView);
         adapter = new InventoryAdapter(this, null);
@@ -64,20 +66,20 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         inventoryList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, final long id) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, final long l) {
 
+                Toast.makeText(MainActivity.this, "itemclick", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(MainActivity.this, ViewActivity.class);
-                Uri currentProdcutUri = ContentUris.withAppendedId(InventoryEntry.CONTENT_URI, id);
-                Log.d("MainActivity", "onItemClick: " + intent.setData(currentProdcutUri));
+                Uri currentProdcutUri = ContentUris.withAppendedId(InventoryEntry.CONTENT_URI, l);
+                Log.e("MainActivity", "onItemClick: " + intent.setData(currentProdcutUri));
                 intent.setData(currentProdcutUri);
                 startActivity(intent);
+
             }
         });
         android.support.v4.app.LoaderManager loaderManager = getSupportLoaderManager();
 
         loaderManager.initLoader(INVENTORY_LOADER, null, this);
-
-        helper = new InventoryDbHelper(this);
 
     }
 

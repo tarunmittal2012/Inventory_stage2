@@ -23,7 +23,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".AddActivity"/>
         </activity>
-        <activity android:name=".ViewActivity">
+        <activity
+            android:name=".ViewActivity"
+            android:label="@string/view_item"
+            android:parentActivityName=".MainActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
         </activity>
 
         <provider

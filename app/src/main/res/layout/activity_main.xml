@@ -7,6 +7,14 @@
     android:background="@color/background"
     tools:context=".MainActivity">
 
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false">
+
+    </ListView>
+
 
     <TextView
         android:id="@+id/empty_text_view"
@@ -17,31 +25,13 @@
         android:text="@string/empty_view_text"
         android:textAppearance="?android:textAppearanceMedium"/>
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="@string/Title"
-        android:textAlignment="center"
-        android:textColor="@color/title_color"
-        android:textSize="@dimen/titile_size"/>
-
-    <ListView
-        android:layout_width="match_parent"
-        android:id="@+id/item_list"
-        android:layout_below="@id/title"
-        android:layout_height="match_parent">
-
-    </ListView>
-
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/add_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/add_item"
         android:onClick="addItem"
         android:src="@drawable/ic_add"/>
 </RelativeLayout>

@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
@@ -122,7 +123,7 @@ public class ViewActivity extends AppCompatActivity implements LoaderManager.Loa
                     break;
             }
 
-            Button productDecreaseButton = findViewById(R.id.decrease);
+            FloatingActionButton productDecreaseButton = findViewById(R.id.decrease);
             productDecreaseButton.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -132,7 +133,7 @@ public class ViewActivity extends AppCompatActivity implements LoaderManager.Loa
                 }
             });
 
-            Button productIncreaseButton = findViewById(R.id.increase);
+            FloatingActionButton productIncreaseButton = findViewById(R.id.increase);
             productIncreaseButton.setOnClickListener(new View.OnClickListener() {
 
                 @Override
@@ -152,7 +153,7 @@ public class ViewActivity extends AppCompatActivity implements LoaderManager.Loa
                 }
             });
 
-            Button phoneButton = findViewById(R.id.phone);
+            FloatingActionButton phoneButton = findViewById(R.id.phone);
             phoneButton.setOnClickListener(new View.OnClickListener() {
 
                 @Override
